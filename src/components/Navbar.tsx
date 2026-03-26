@@ -1,32 +1,8 @@
+import { navLinks } from '@/lib/constants';
 import { Search, ShoppingBag } from 'lucide-react';
 
 export default function Navbar() {
-  const navLinks = [
-    {
-      to: 'home',
-      name: 'home',
-    },
-    {
-      to: 'mac',
-      name: 'mac',
-    },
-    {
-      to: 'chip',
-      name: 'chip',
-    },
-    {
-      to: 'graphics',
-      name: 'graphics',
-    },
-    {
-      to: 'features',
-      name: 'features',
-    },
-    {
-      to: 'footer',
-      name: 'footer',
-    },
-  ];
+
   return (
     <header>
       <nav>
