@@ -1,15 +1,19 @@
+import { useMacBookStore } from '@/hooks/useMacBookStore';
+import { useGSAP } from '@gsap/react';
 import { PresentationControls } from '@react-three/drei';
-import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useRef } from 'react';
+import { Group, Material, Mesh } from 'three';
 import Macbook14 from './models/Macbook-14';
 import Macbook16 from './models/Macbook-16';
-import { useGSAP } from '@gsap/react';
-import { Group, Material, Mesh } from 'three';
 
-export default function ModelSwitcher({ scale, isMobile }: { scale: number; isMobile: boolean }) {
+export default function ModelSwitcher({ isMobile }: { isMobile: boolean }) {
   const smallMacbookRef = useRef<Group>(null);
   const largeMacbookRef = useRef<Group>(null);
 
+  const { color, scale: scl } = useMacBookStore();
+
+  const scale = isMobile ? scl - 0.03 : scl;
   const showLargeMacBook = scale === 0.08 || scale === 0.05;
 
   const AnimationDuration = 1;
@@ -86,13 +90,13 @@ export default function ModelSwitcher({ scale, isMobile }: { scale: number; isMo
     <>
       <PresentationControls {...controlConfig}>
         <group ref={smallMacbookRef}>
-          <Macbook14 scale={isMobile ? 0.03 : 0.06} />
+          <Macbook14 color={color} scale={isMobile ? 0.03 : 0.06} />
         </group>
       </PresentationControls>
 
       <PresentationControls {...controlConfig}>
         <group ref={largeMacbookRef}>
-          <Macbook16 scale={isMobile ? 0.05 : 0.08} />
+          <Macbook16 color={color} scale={isMobile ? 0.05 : 0.08} />
         </group>
       </PresentationControls>
     </>
