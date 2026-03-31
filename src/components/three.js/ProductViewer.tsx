@@ -1,4 +1,4 @@
-import { useMacBookStore } from '@/hooks/useMacBookStore';
+import useMacBookStore from '@/hooks/useMacBookStore';
 import { valueMappings } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import { Canvas } from '@react-three/fiber';

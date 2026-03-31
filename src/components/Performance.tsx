@@ -1,4 +1,5 @@
 import { performanceImages, performanceImgPositions } from '@/lib/constants';
+import { cn } from '@/lib/utils';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -37,21 +38,25 @@ export default function Performance() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top bottom',
-          end: 'center center',
+          end: 'center top+=150',
           scrub: 1,
           invalidateOnRefresh: true,
         },
       });
 
       performanceImgPositions.forEach((pos) => {
-        if (pos.id === 'p5') return;
-
         const toVars: any = {};
 
-        if (pos.left !== undefined) toVars.left = `${pos.left}%`;
-        if (pos.right !== undefined) toVars.right = `${pos.right}%`;
-        if (pos.bottom !== undefined) toVars.bottom = `${pos.bottom}%`;
-        if (pos.transform !== undefined) toVars.transform = pos.transform;
+        if (pos.id === 'p5') {
+          gsap.set(`.${pos.id}`, { scale: 1 });
+          if (pos.transform !== undefined) toVars.transform = pos.transform;
+          toVars.scale = 1.5;
+        } else {
+          if (pos.left !== undefined) toVars.left = `${pos.left}%`;
+          if (pos.right !== undefined) toVars.right = `${pos.right}%`;
+          if (pos.bottom !== undefined) toVars.bottom = `${pos.bottom}%`;
+          if (pos.transform !== undefined) toVars.transform = pos.transform;
+        }
 
         tl.to(`.${pos.id}`, toVars, 0);
       });
@@ -65,7 +70,12 @@ export default function Performance() {
 
       <div className="wrapper">
         {performanceImages.map((img, id) => (
-          <img className={img.id} src={img.src} alt={img.id} key={id} />
+          <img
+            className={cn(img.id === 'p5' ? 'z-10' : '', img.id)}
+            src={img.src}
+            alt={img.id}
+            key={id}
+          />
         ))}
       </div>
 

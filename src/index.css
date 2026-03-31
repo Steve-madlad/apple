@@ -359,7 +359,7 @@ body {
       }
 
       .p5 {
-        @apply absolute bottom-[20%] left-1/2 -translate-x-1/2 scale-150;
+        @apply absolute bottom-[20%] left-1/2 !-translate-x-1/2 scale-150;
       }
 
       .p6 {

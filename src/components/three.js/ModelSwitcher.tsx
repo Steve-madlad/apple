@@ -1,4 +1,4 @@
-import { useMacBookStore } from '@/hooks/useMacBookStore';
+import useMacBookStore from '@/hooks/useMacBookStore';
 import { useGSAP } from '@gsap/react';
 import { PresentationControls } from '@react-three/drei';
 import gsap from 'gsap';
