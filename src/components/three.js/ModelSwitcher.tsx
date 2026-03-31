@@ -4,8 +4,8 @@ import { PresentationControls } from '@react-three/drei';
 import gsap from 'gsap';
 import { useRef } from 'react';
 import { Group, Material, Mesh } from 'three';
-import Macbook14 from './models/Macbook-14';
-import Macbook16 from './models/Macbook-16';
+import Macbook14 from '../models/Macbook-14';
+import Macbook16 from '../models/Macbook-16';
 
 export default function ModelSwitcher({ isMobile }: { isMobile: boolean }) {
   const smallMacbookRef = useRef<Group>(null);

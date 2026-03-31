@@ -4,15 +4,15 @@ import { cn } from '@/lib/utils';
 import { Canvas } from '@react-three/fiber';
 import Lighting from './Lighting.js';
 import ModelSwitcher from './ModelSwitcher.js';
-import {useMediaQuery} from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
 
 export default function ProductViewer() {
   const { color, scale, setColor, setScale } = useMacBookStore();
-  const isMobile = useMediaQuery({query: '(max-width: 1024px)'});
+  const isMobile = useMediaQuery({ query: '(max-width: 1024px)' });
 
   return (
     <section id="product-viewer">
-      <h2 className='text-center'>Take a Closer Look.</h2>
+      <h2 className="text-center">Take a Closer Look.</h2>
       <div className="controls">
         <p>
           Macbook Pro {valueMappings.scale[scale]} in {valueMappings.color[color]}
