@@ -4,6 +4,7 @@ import Navbar from '@comps/Navbar';
 import ProductViewer from '@comps/three.js/ProductViewer';
 import Performance from '@comps/Performance';
 import Features from '@comps/Features';
+import Highlights from '@comps/Highlights';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Chip />
       <Performance />
       <Features />
+      <Highlights />
     </div>
   );
 }
