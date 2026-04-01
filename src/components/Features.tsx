@@ -1,5 +1,5 @@
 import MacbookModel from '@/components/models/Macbook';
-// import useMacBookStore from '@/hooks/useMacBookStore';
+import useMacBookStore from '@/hooks/useMacBookStore';
 import { features, featureSequence } from '@/lib/constants';
 import { useGSAP } from '@gsap/react';
 import { Html } from '@react-three/drei';
@@ -17,7 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 const ScrollingMac = () => {
   const groupRef = useRef<Group>(null);
   const isMobile = useMediaQuery({ query: '(max-width: 1024px)' });
-  // const { setTexeture } = useMacBookStore();
+  const { setTexture } = useMacBookStore();
 
   useEffect(() => {
     const videos = featureSequence.map((feature) => {
@@ -55,20 +55,48 @@ const ScrollingMac = () => {
       },
     });
 
-    // const timeline = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: '#f-canvas',
-    //     start: 'top center',
-    //     end: 'bottom top',
-    //     scrub: 1,
-    //   },
-    // });
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#f-canvas',
+        start: 'top center',
+        end: 'bottom top',
+        scrub: 1,
+      },
+    });
 
     if (groupRef.current) {
       modelTl.to(groupRef.current.rotation, {
         y: Math.PI * 2,
       });
     }
+
+    timeline
+      .call(() => setTexture('/videos/feature-1.mp4'))
+      .to('.box1', {
+        opacity: 1,
+        y: 0,
+        delay: 1,
+      })
+      .call(() => setTexture('/videos/feature-2.mp4'))
+      .to('.box2', {
+        opacity: 1,
+        y: 0,
+      })
+      .call(() => setTexture('/videos/feature-3.mp4'))
+      .to('.box3', {
+        opacity: 1,
+        y: 0,
+      })
+      .call(() => setTexture('/videos/feature-4.mp4'))
+      .to('.box4', {
+        opacity: 1,
+        y: 0,
+      })
+      .call(() => setTexture('/videos/feature-5.mp4'))
+      .to('.box5', {
+        opacity: 1,
+        y: 0,
+      });
   });
 
   return (
