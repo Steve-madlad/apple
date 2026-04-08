@@ -38,31 +38,37 @@ export default function Chip() {
       <div className="content">
         <div className="wrapper">
           <div className="lg:max-w-md">
-            <h1 className='text-white font-bold text-6xl'>Blazing Chip</h1>
+            <h1 className="text-6xl font-bold text-white">Blazing Chip</h1>
             <div className="mt-7 space-y-5 pe-10">
-              <p>introducing <b className='text-white'>M4, the next generation Of Apple silicon.</b> M4 powers</p>
               <p>
-                It drives <b className="text-white">Apple Intelligence</b> on iPad Pro, so you can write, create, and accomplish
-                more with ease. All in a design that's unbelievably thin, light, and powerful.
+                introducing <b className="text-white">M4, the next generation Of Apple silicon.</b>{' '}
+                M4 powers
+              </p>
+              <p>
+                It drives <b className="text-white">Apple Intelligence</b> on iPad Pro, so you can
+                write, create, and accomplish more with ease. All in a design that's unbelievably
+                thin, light, and powerful.
               </p>
               <p>
                 A brand-new display engine delivers breathtaking precision, color accuracy, and
-                brightness. And a <b className="text-white">next-gen GPU</b> with hardware-accelerated ray tracing brings
-                console-level graphics to your fingertips.
+                brightness. And a <b className="text-white">next-gen GPU</b> with
+                hardware-accelerated ray tracing brings console-level graphics to your fingertips.
               </p>
-              <a href='#' className='text-blue-500 hover:underline'>Learn more about Apple Intelligence</a>
+              <a href="#" className="text-blue-500 hover:underline">
+                Learn more about Apple Intelligence
+              </a>
             </div>
           </div>
 
           <div className="max-w-3xs space-y-14">
             <div className="space-y-2">
               <p>Up to</p>
-              <p className='text-white text-5xl'>4x faster</p>
+              <p className="text-5xl text-white">4x faster</p>
               <p>Pro rendering performance than M2</p>
             </div>
             <div className="space-y-2">
               <p>Up to</p>
-              <p className='text-white text-5xl'>1.5x faster</p>
+              <p className="text-5xl text-white">1.5x faster</p>
               <p>CPU performance than M2</p>
             </div>
           </div>

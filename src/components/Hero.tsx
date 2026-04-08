@@ -18,10 +18,10 @@ export default function Hero() {
         <img src="/title.png" alt="Mackbook Title" />
       </div>
       <video src="/videos/hero.mp4" ref={videoRef} autoPlay muted playsInline />
-      <div className="apple-gradient-animated rounded-[10px] p-0.5 -translate-y-0.5">
+      <div className="apple-gradient-animated -translate-y-0.5 rounded-[10px] p-0.5">
         <Button className="m-0 w-62.5 py-7 text-lg capitalize">buy now</Button>
       </div>
-      <p className='mt-15'>For $1199 or $133/mo for 12 months</p>
+      <p className="mt-15">For $1199 or $133/mo for 12 months</p>
     </section>
   );
 }

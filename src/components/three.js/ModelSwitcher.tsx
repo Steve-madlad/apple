@@ -66,10 +66,10 @@ export default function ModelSwitcher({ isMobile }: { isMobile: boolean }) {
     gsap.to(smallMacbookRef.current.rotation, {
       y: 0,
       scrollTrigger: {
-        trigger: "#product-viewer",
-        start: "top top+=200",
+        trigger: '#product-viewer',
+        start: 'top top+=200',
         once: true,
-      }
+      },
     });
   }, []);
 
