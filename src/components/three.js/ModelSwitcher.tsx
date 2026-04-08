@@ -2,10 +2,13 @@ import useMacBookStore from '@/hooks/useMacBookStore';
 import { useGSAP } from '@gsap/react';
 import { PresentationControls } from '@react-three/drei';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef } from 'react';
 import { Group, Material, Mesh } from 'three';
 import Macbook14 from '../models/Macbook-14';
 import Macbook16 from '../models/Macbook-16';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ModelSwitcher({ isMobile }: { isMobile: boolean }) {
   const smallMacbookRef = useRef<Group>(null);
@@ -51,6 +54,21 @@ export default function ModelSwitcher({ isMobile }: { isMobile: boolean }) {
         const material = (child as Mesh).material as Material & { opacity: number };
         material.transparent = true;
         gsap.set(material, { opacity: 0 });
+      }
+    });
+
+    gsap.set(smallMacbookRef.current.rotation, { y: Math.PI / 4 });
+  }, []);
+
+  useGSAP(() => {
+    if (!smallMacbookRef.current) return;
+
+    gsap.to(smallMacbookRef.current.rotation, {
+      y: 0,
+      scrollTrigger: {
+        trigger: "#product-viewer",
+        start: "top top+=200",
+        once: true,
       }
     });
   }, []);

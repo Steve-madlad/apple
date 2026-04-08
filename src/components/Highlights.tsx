@@ -46,11 +46,11 @@ export default function Highlights() {
           <div>
             <img src="/battery.png" alt="batter" />
             <p>
-              Up to{' '}
+              Never carry a charger. <br />
               <span className="green-gradient">
-                {''}14 more hours{''}
+                {''}14 hours{''}
               </span>{' '}
-              battery life. <span> (Up to 24 hours total.)</span>
+              of battery life. <span> (Up to 24 hours total.)</span>
             </p>
           </div>
         </div>

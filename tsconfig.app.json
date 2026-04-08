@@ -27,10 +27,9 @@
     "noPropertyAccessFromIndexSignature": true,
     "allowUnreachableCode": false,
 
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@comps/*": ["src/components/*"]
+      "@/*": ["./src/*"],
+      "@comps/*": ["./src/components/*"]
     }
   },
   "include": ["src"]

@@ -5,6 +5,7 @@ import ProductViewer from '@comps/three.js/ProductViewer';
 import Performance from '@comps/Performance';
 import Features from '@comps/Features';
 import Highlights from '@comps/Highlights';
+import Footer from '@comps/Footer';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
       <Performance />
       <Features />
       <Highlights />
+      <Footer/>
     </div>
   );
 }

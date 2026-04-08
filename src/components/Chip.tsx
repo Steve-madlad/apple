@@ -23,7 +23,7 @@ export default function Chip() {
         .to('.mask img', {
           transform: 'scale(1.1)',
         })
-        .to('.content', { opacity: 1, y: 0, ease: 'power1.in' });
+        .to('.content', { opacity: 1, ease: 'power1.in' });
     }
   }, [isTablet]);
 
@@ -39,29 +39,29 @@ export default function Chip() {
         <div className="wrapper">
           <div className="lg:max-w-md">
             <div className="mt-7 space-y-5 pe-10">
-              <p>introducing M4, the next generation Of Apple siücon. M4 powers</p>
+              <p>introducing <b className='text-white'>M4, the next generation Of Apple silicon.</b> M4 powers</p>
               <p>
-                It drives Apple Intelligence on iPad Pro, so you can write, create, and accomplish
+                It drives <b className="text-white">Apple Intelligence</b> on iPad Pro, so you can write, create, and accomplish
                 more with ease. All in a design that's unbelievably thin, light, and powerful.
               </p>
               <p>
                 A brand-new display engine delivers breathtaking precision, color accuracy, and
-                brightness. And a next-gen GPU with hardware-accelerated ray tracing brings
+                brightness. And a <b className="text-white">next-gen GPU</b> with hardware-accelerated ray tracing brings
                 console-level graphics to your fingertips.
               </p>
-              <p>Learn more about Apple Intelligence</p>
+              <a href='#' className='text-blue-500 hover:underline'>Learn more about Apple Intelligence</a>
             </div>
           </div>
 
           <div className="max-w-3xs space-y-14">
             <div className="space-y-2">
               <p>Up to</p>
-              <p>4x faster</p>
+              <p className='text-white text-5xl'>4x faster</p>
               <p>Pro rendering performance than M2</p>
             </div>
             <div className="space-y-2">
               <p>Up to</p>
-              <p>1.5x faster</p>
+              <p className='text-white text-5xl'>1.5x faster</p>
               <p>CPU performance than M2</p>
             </div>
           </div>

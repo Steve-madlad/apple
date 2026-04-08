@@ -190,13 +190,44 @@ body {
 @utility h3-semibold {
   @apply text-dark-100 text-xl font-semibold;
 }
+@utility text-gradient-clip {
+  @apply bg-[linear-gradient(91deg,#0096ff_0%,#bb64ff_42%,#f2416b_74%,#eb7500_100%)] bg-clip-text text-transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility apple-gradient-animated {
+  @apply relative flex items-center gap-7 overflow-hidden rounded-3xl border-[3px] border-transparent bg-[#1d1d1f] bg-clip-padding p-10;
+
+  @apply before:pointer-events-none before:absolute before:inset-0 before:-z-1 before:-m-1.25 before:rounded-[24px];
+
+  /* gradient setup */
+  @apply before:bg-[linear-gradient(91deg,#0096ff_0%,#bb64ff_42%,#f2416b_74%,#eb7500_100%)];
+  @apply before:bg-size-[300%_300%];
+
+  /* smooth infinite animation (no hover) */
+  @apply before:animate-[gradientSmooth_6s_ease-in-out_infinite];
+}
+
+@keyframes gradientSmooth {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 @layer components {
   header {
     @apply fixed top-0 left-0 z-50 flex min-h-[7vh] w-screen items-center justify-center bg-black;
 
     nav {
-      @apply container mx-auto flex items-center justify-between px-5 2xl:px-0;
+      @apply container mx-auto flex items-center justify-between px-5 2xl:px-20;
 
       img {
         @apply cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-0.5;
@@ -400,7 +431,7 @@ body {
   }
 
   #highlights {
-    @apply container mx-auto max-lg:px-5 lg:py-40;
+    @apply container mx-auto max-lg:px-5 2xl:px-20 lg:py-40;
 
     h2 {
       @apply mx-auto max-w-3xl text-center text-3xl font-semibold text-white lg:text-7xl;
@@ -444,37 +475,12 @@ body {
           @apply max-w-2xs text-4xl font-semibold;
         }
         .apple-gradient {
-          @apply relative flex items-center gap-7 rounded-3xl p-10;
-
-          background: #1d1d1f;
-          background-clip: padding-box; /* !important */
-          border: 3px solid transparent; /* !important */
-
-          ::before {
-            content: '';
-            pointer-events: none;
-            position: absolute;
-            inset: 0px;
-            z-index: -1;
-            margin: -5px; /* !important */
-            border-radius: 24px; /* !important */
-            background: linear-gradient(91deg, #0096ff 0%, #bb64ff 42%, #f2416b 74%, #eb7500 100%);
-          }
-
+          @apply relative flex items-center gap-7 rounded-3xl border-[3px] border-transparent bg-[#1d1d1f] bg-clip-padding p-10 before:pointer-events-none before:absolute before:inset-0 before:-z-1 before:-m-1.25 before:rounded-[24px] before:bg-[linear-gradient(91deg,#0096ff_0%,#bb64ff_42%,#f2416b_74%,#eb7500_100%)];
           p {
             @apply font-semibold lg:text-2xl 2xl:text-3xl;
 
             span {
-              background: linear-gradient(
-                91deg,
-                #0096ff 0%,
-                #bb64ff 42%,
-                #f2416b 74%,
-                #eb7500 100%
-              );
-              background-clip: text;
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
+              @apply text-gradient-clip;
             }
           }
         }
@@ -498,7 +504,7 @@ body {
   }
 
   footer {
-    @apply container mx-auto py-7 max-lg:px-5;
+    @apply 2xl:px-20 container mx-auto py-7 max-lg:px-5;
 
     .info {
       @apply flex items-center justify-between;

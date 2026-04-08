@@ -79,11 +79,17 @@ export default function Performance() {
         ))}
       </div>
 
-      <div className="content">
-        <p>
-          Run graphics-intensive workflows with a responsiveness that keeps up with your
-          imagination. The M4 family of chips features a GPU with a second-generation
-          hardware-accelerated ray tracing engine that renders images faster, so
+      <div className="col-full-center mt-20 space-y-6 px-5">
+        <h2 className="">Unleash Your Creativity</h2>
+        <p className="max-w-xl text-start text-xl">
+          Run graphics-intensive workflows
+          <b className="text-white"> with a responsiveness </b>
+          that keeps up with your imagination. The M4 family of chips features a GPU with a
+          second-generation hardware-accelerated ray tracing engine that renders images faster, so
+          you can create
+          <b className="text-white"> stunning visuals in real-time </b>
+          without any lag or delays. This allows you to focus on bringing your creative ideas to
+          life without being held back by slow rendering times.
         </p>
       </div>
     </section>
