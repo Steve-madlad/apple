@@ -38,6 +38,7 @@ export default function Chip() {
       <div className="content">
         <div className="wrapper">
           <div className="lg:max-w-md">
+            <h1 className='text-white font-bold text-6xl'>Blazing Chip</h1>
             <div className="mt-7 space-y-5 pe-10">
               <p>introducing <b className='text-white'>M4, the next generation Of Apple silicon.</b> M4 powers</p>
               <p>

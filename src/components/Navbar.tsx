@@ -17,8 +17,8 @@ export default function Navbar() {
         </div>
 
         <div className="flex gap-2">
-          <Search />
-          <ShoppingBag />
+          <Search size={18}/>
+          <ShoppingBag size={18}/>
         </div>
       </nav>
     </header>

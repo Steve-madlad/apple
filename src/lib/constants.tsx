@@ -1,4 +1,4 @@
-type Section = 'home' | 'mac' | 'chip' | 'graphics' | 'features' | 'footer';
+type Section = 'home' | 'mac' | 'chip' | 'graphics' | 'features' | 'products';
 
 type NavLink = {
   to: Section;
@@ -32,8 +32,8 @@ const navLinks: NavLink[] = [
     name: 'features',
   },
   {
-    to: 'footer',
-    name: 'footer',
+    to: 'products',
+    name: 'products',
   },
 ];
 
